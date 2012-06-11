@@ -9,6 +9,6 @@ REM move leiningen-2.0.0-SNAPSHOT-standalone.jar bin\
 
 set PATH=%PATH%;%CD%\bin
 set LEIN_JAR=%CD%\bin\leiningen-2.0.0-SNAPSHOT-standalone.jar
-IF NOT EXIST %USERPROFILE%\.lein mkdir %USERPROFILE%\.lein
-IF EXIST %USERPROFILE%\.lein\profiles.clj cp %USERPROFILE%\.lein\profiles.clj %USERPROFILE%\.lein\profiles.clj.old
-echo {:user {:plugins [[lein-catnip "0.1.0"]]}} > %USERPROFILE%\.lein\profiles.clj 
+IF NOT EXIST "%USERPROFILE%"\.lein mkdir "%USERPROFILE%"\.lein
+IF EXIST "%USERPROFILE%"\.lein\profiles.clj copy "%USERPROFILE%"\.lein\profiles.clj "%USERPROFILE%"\.lein\profiles.clj.old
+echo {:user {:plugins [[lein-catnip "0.1.0"]]}} > "%USERPROFILE%"\.lein\profiles.clj
